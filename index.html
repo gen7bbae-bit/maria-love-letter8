@@ -1,0 +1,1713 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5f1730">
+<meta name="description" content="წერილი მარიამისთვის — სიყვარულის, კურთხევისა და ახალი ოჯახის დაპირება">
+<title>წერილი შენთვის, ჩემო მარიამ</title>
+<style>
+:root {
+  --wine:#681f38;
+  --wine-dark:#2d0c18;
+  --rose:#a14f68;
+  --gold:#c7a261;
+  --gold-soft:#ead6ad;
+  --cream:#fbf6ed;
+  --paper:#fffdf8;
+  --ink:#302724;
+  --muted:#76665f;
+  --line:rgba(123,72,54,.16);
+  --shadow:0 22px 70px rgba(53,23,21,.13);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(199,162,97,.10), transparent 30%),
+    linear-gradient(180deg,#f4eadc 0%,#fbf6ed 35%,#f6eee5 100%);
+  font-family:"Noto Serif Georgian","Sylfaen","DejaVu Serif",Georgia,serif;
+  font-size:18px;
+  line-height:1.9;
+  overflow-x:hidden;
+}
+body.night {
+  --cream:#171113;
+  --paper:#21171a;
+  --ink:#f8efe6;
+  --muted:#c7b8af;
+  --line:rgba(255,255,255,.10);
+  background:linear-gradient(180deg,#160d11,#21171a);
+}
+a { color:inherit; }
+.topbar {
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  display:flex; align-items:center; gap:10px;
+  padding:max(10px,env(safe-area-inset-top)) 14px 10px;
+  background:rgba(255,250,244,.78);
+  backdrop-filter:blur(16px) saturate(130%);
+  border-bottom:1px solid var(--line);
+}
+body.night .topbar { background:rgba(24,16,19,.78); }
+.brand {
+  font-family:Arial,sans-serif; font-size:12px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--wine); font-weight:700; flex:1;
+}
+body.night .brand { color:var(--gold-soft); }
+.icon-btn {
+  border:1px solid var(--line); background:rgba(255,255,255,.55);
+  border-radius:999px; min-width:42px; height:42px; padding:0 13px;
+  display:grid; place-items:center; cursor:pointer; font-size:16px;
+}
+body.night .icon-btn { background:rgba(255,255,255,.06); color:#fff; }
+.progress {
+  position:fixed; top:0; left:0; z-index:90; height:3px;
+  width:0; background:linear-gradient(90deg,var(--gold),#f2d79b);
+}
+.hero {
+  min-height:100svh;
+  padding:120px 24px 70px;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  color:#fff8ee;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,255,255,.14),transparent 24%),
+    radial-gradient(circle at 20% 70%,rgba(199,162,97,.12),transparent 28%),
+    linear-gradient(145deg,var(--wine-dark),var(--wine) 58%,#7d2a45);
+  position:relative; isolation:isolate; overflow:hidden;
+}
+.hero::before,.hero::after {
+  content:""; position:absolute; border:1px solid rgba(234,214,173,.28);
+  border-radius:50%; width:640px; height:640px; z-index:-1;
+}
+.hero::before { top:-390px; left:50%; transform:translateX(-50%); }
+.hero::after { bottom:-430px; right:-230px; }
+.sparkles {
+  position:absolute; inset:0; pointer-events:none; opacity:.65;
+  background-image:
+    radial-gradient(circle at 20% 30%,#fff 0 1px,transparent 1.8px),
+    radial-gradient(circle at 70% 22%,#fff 0 1px,transparent 1.8px),
+    radial-gradient(circle at 80% 65%,#fff 0 1px,transparent 1.8px),
+    radial-gradient(circle at 35% 78%,#fff 0 1px,transparent 1.8px);
+}
+.hero-inner { max-width:900px; }
+.eyebrow {
+  color:#ebcf96; font-family:Arial,sans-serif; font-weight:700;
+  letter-spacing:.24em; text-transform:uppercase; font-size:.74rem;
+}
+.hero h1 {
+  font-size:clamp(2.7rem,9vw,5.4rem);
+  line-height:1.16; margin:.45em 0 .25em; text-wrap:balance;
+}
+.hero .subtitle {
+  max-width:760px; margin:auto;
+  font-size:clamp(1.05rem,3.5vw,1.45rem); color:#f7e8d2;
+}
+.hero .names { margin-top:2.2rem; color:#e7c98e; letter-spacing:.06em; }
+.hero-actions {
+  margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+}
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  min-height:48px; padding:12px 20px; border-radius:999px;
+  text-decoration:none; border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.10); color:#fff; font-family:Arial,sans-serif;
+  font-size:14px; font-weight:700; cursor:pointer;
+}
+.btn.primary { background:#f2dfb9; color:#4a1626; border-color:transparent; }
+.scrollhint { margin-top:3rem; font-family:Arial,sans-serif; font-size:12px; opacity:.72; }
+.navwrap {
+  position:sticky; top:62px; z-index:30;
+  background:rgba(251,246,237,.90); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line); overflow:auto;
+}
+body.night .navwrap { background:rgba(31,21,24,.92); }
+.nav {
+  max-width:1040px; margin:auto; padding:11px 14px;
+  display:flex; gap:10px; white-space:nowrap;
+}
+.nav a {
+  text-decoration:none; font-family:Arial,sans-serif; font-size:12px;
+  color:var(--wine); border:1px solid var(--line); border-radius:999px;
+  padding:8px 12px; background:rgba(255,255,255,.55);
+}
+body.night .nav a { color:var(--gold-soft); background:rgba(255,255,255,.05); }
+main { max-width:980px; margin:auto; padding:42px 18px 110px; }
+.chapter {
+  margin:34px 0; padding:clamp(26px,5vw,58px);
+  background:rgba(255,253,248,.88); border:1px solid var(--line);
+  border-radius:28px; box-shadow:var(--shadow);
+  position:relative; overflow:hidden;
+}
+body.night .chapter { background:rgba(33,23,26,.92); }
+.chapter::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.kicker {
+  text-align:center; color:var(--gold); font-family:Arial,sans-serif;
+  letter-spacing:.18em; font-size:.74rem; text-transform:uppercase;
+}
+.chapter h2 {
+  text-align:center; color:var(--wine); font-size:clamp(1.8rem,5vw,2.8rem);
+  line-height:1.35; margin:.35em 0 .2em; text-wrap:balance;
+}
+body.night .chapter h2 { color:#e9c3ce; }
+.sub { text-align:center; color:var(--muted); font-style:italic; margin-bottom:2rem; }
+.orn { text-align:center; color:var(--gold); letter-spacing:.7em; margin:1rem 0 2rem; }
+.chapter p { margin:0 0 1.3em; text-align:justify; }
+.quote {
+  border-left:4px solid var(--gold); background:rgba(199,162,97,.09);
+  padding:18px 22px; border-radius:10px; margin:24px 0; font-style:italic;
+}
+.promise {
+  color:#fff8ee; border:none;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.08),transparent 30%),
+    linear-gradient(145deg,#6d2039,#32101b);
+}
+.promise h2,.promise .kicker { color:#f2d79b; }
+.promise .sub { color:#f8e8d3; }
+.signature { text-align:right; color:var(--wine); font-style:italic; font-size:1.15rem; }
+.footer { text-align:center; color:var(--muted); padding:30px 20px 70px; }
+.reveal { opacity:0; transform:translateY(24px); transition:.8s ease; }
+.reveal.visible { opacity:1; transform:none; }
+.floating {
+  position:fixed; right:16px; bottom:calc(18px + env(safe-area-inset-bottom));
+  z-index:40; display:flex; flex-direction:column; gap:10px;
+}
+.floating button {
+  width:48px; height:48px; border-radius:50%; border:1px solid var(--line);
+  background:rgba(255,253,248,.9); box-shadow:0 10px 30px rgba(0,0,0,.14);
+  cursor:pointer; font-size:18px;
+}
+body.night .floating button { background:#2b1b20; color:#fff; }
+.toast {
+  position:fixed; left:50%; bottom:24px; transform:translate(-50%,20px);
+  background:#2f1b22; color:white; padding:11px 16px; border-radius:999px;
+  opacity:0; pointer-events:none; transition:.25s; z-index:99; font-family:Arial,sans-serif;
+  font-size:13px;
+}
+.toast.show { opacity:1; transform:translate(-50%,0); }
+@media (max-width:650px) {
+  body { font-size:17px; line-height:1.86; }
+  .topbar { padding-left:10px; padding-right:10px; }
+  .brand { font-size:10px; letter-spacing:.12em; }
+  .hero { padding-left:18px; padding-right:18px; }
+  .chapter { border-radius:20px; padding:28px 20px; }
+  .chapter p { text-align:left; }
+  .navwrap { top:62px; }
+}
+@media print {
+  .topbar,.progress,.navwrap,.floating,.hero-actions,.scrollhint,.toast { display:none!important; }
+  body { background:white; font-size:12pt; }
+  .hero { min-height:260mm; page-break-after:always; }
+  main { max-width:none; padding:0; }
+  .chapter { box-shadow:none; border:none; border-radius:0; margin:0; page-break-before:always; }
+  .reveal { opacity:1!important; transform:none!important; }
+}
+
+/* ===== Mariam Digital Family Book · Upgrade Stage 1 ===== */
+:root{
+  --frame:#d7b56d;
+  --frame-dark:#88642f;
+  --velvet:#5c122b;
+}
+body{padding-bottom:80px}
+.cinema-vignette{
+  position:fixed; inset:0; pointer-events:none; z-index:4;
+  box-shadow:inset 0 0 150px rgba(46,8,22,.18);
+}
+.petals{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.petal{
+  position:absolute;top:-12vh;width:14px;height:10px;border-radius:70% 30% 70% 30%;
+  background:linear-gradient(135deg,#ffd7e2,#f5a7bd);
+  opacity:.72;filter:drop-shadow(0 2px 2px rgba(91,20,45,.15));
+  animation:petalFall linear infinite;
+}
+@keyframes petalFall{
+  0%{transform:translate3d(0,-12vh,0) rotate(0deg)}
+  50%{transform:translate3d(55px,48vh,0) rotate(220deg)}
+  100%{transform:translate3d(-25px,112vh,0) rotate(520deg)}
+}
+.envelope-stage{
+  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(255,255,255,.12),transparent 25%),
+    linear-gradient(145deg,#210914,#651c39 62%,#8c3150);
+  transition:opacity .9s ease,visibility .9s ease;
+}
+.envelope-stage.opened{opacity:0;visibility:hidden}
+.envelope-wrap{text-align:center;color:#fff7ec;padding:24px}
+.envelope{
+  width:min(86vw,440px);aspect-ratio:1.55/1;position:relative;margin:auto;
+  border-radius:12px;background:linear-gradient(145deg,#f6ead7,#e4cba8);
+  box-shadow:0 35px 90px rgba(0,0,0,.35);
+  overflow:hidden;cursor:pointer;transform:translateZ(0);
+}
+.envelope:before,.envelope:after{content:"";position:absolute;inset:0}
+.envelope:before{
+  clip-path:polygon(0 0,50% 58%,100% 0);
+  background:linear-gradient(160deg,#fff8eb,#dcbf97);
+  transform-origin:50% 0;transition:transform 1s cubic-bezier(.2,.8,.2,1);
+  z-index:3
+}
+.envelope:after{
+  clip-path:polygon(0 100%,0 10%,50% 66%,100% 10%,100% 100%);
+  background:linear-gradient(145deg,#f3e3cc,#d5b88e);z-index:2
+}
+.envelope.open:before{transform:rotateX(180deg)}
+.seal{
+  position:absolute;left:50%;top:51%;z-index:5;transform:translate(-50%,-50%);
+  width:78px;height:78px;border-radius:50%;display:grid;place-items:center;
+  color:#f9e4b8;font:700 25px Georgia,serif;
+  background:radial-gradient(circle at 35% 30%,#b94b68,#68172f 70%);
+  box-shadow:0 8px 20px rgba(61,4,22,.35),inset 0 0 0 5px rgba(255,255,255,.12);
+  transition:transform .55s ease,opacity .55s ease
+}
+.envelope.open .seal{transform:translate(-50%,-50%) scale(.2) rotate(90deg);opacity:0}
+.open-caption{margin-top:22px;font-family:Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+.open-title{font-size:clamp(28px,6vw,48px);margin:0 0 8px}
+.memory-break{
+  max-width:1050px;margin:72px auto;padding:20px 16px;
+}
+.memory-heading{text-align:center;margin-bottom:28px}
+.memory-heading .eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--wine)}
+.memory-heading h3{font-size:clamp(27px,5vw,46px);line-height:1.2;margin:8px 0;color:var(--wine-dark)}
+.memory-heading p{max-width:720px;margin:auto;color:var(--muted)}
+.frame-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);gap:22px;align-items:start;
+}
+.photo-frame{
+  grid-column:span 4;background:#fffaf1;padding:11px 11px 44px;border:10px solid transparent;
+  border-image:linear-gradient(145deg,#6f4a1f,#e5c879,#8c652e,#f2dda6) 1;
+  box-shadow:0 24px 55px rgba(57,29,21,.18);
+  transform:rotate(var(--tilt,0deg));position:relative;cursor:zoom-in;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.photo-frame:hover{transform:rotate(0) translateY(-7px);box-shadow:0 34px 70px rgba(57,29,21,.25)}
+.photo-frame.wide{grid-column:span 6}
+.photo-frame.tall{grid-column:span 4}
+.photo-frame img{display:block;width:100%;height:330px;object-fit:cover;background:#eee}
+.photo-frame.tall img{height:430px}
+.photo-frame figcaption{
+  position:absolute;left:12px;right:12px;bottom:9px;text-align:center;
+  color:#4a382d;font:600 13px/1.3 Arial,sans-serif
+}
+.story-ribbon{
+  max-width:900px;margin:34px auto;padding:22px 26px;border-radius:18px;
+  background:linear-gradient(135deg,rgba(104,31,56,.96),rgba(45,12,24,.96));
+  color:#fff8ee;text-align:center;box-shadow:var(--shadow)
+}
+.proposal-timeline{position:relative;max-width:960px;margin:45px auto}
+.proposal-timeline:before{
+  content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),transparent)
+}
+.proposal-item{width:46%;margin:0 0 42px;position:relative}
+.proposal-item:nth-child(even){margin-left:54%}
+.proposal-item img{width:100%;display:block;border-radius:18px;box-shadow:0 22px 55px rgba(35,12,18,.25)}
+.proposal-item:after{
+  content:"❤";position:absolute;top:26px;right:-12.6%;width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;background:var(--wine);color:white;border:3px solid var(--gold-soft)
+}
+.proposal-item:nth-child(even):after{right:auto;left:-12.6%}
+.proposal-item p{font-weight:700;color:var(--wine);text-align:center}
+.lightbox{
+  position:fixed;inset:0;z-index:1200;background:rgba(16,7,11,.94);display:none;
+  place-items:center;padding:22px
+}
+.lightbox.show{display:grid}
+.lightbox img{max-width:min(96vw,1100px);max-height:88vh;object-fit:contain;border-radius:12px}
+.lightbox button{position:absolute;top:18px;right:18px;width:48px;height:48px;border:0;border-radius:50%;font-size:24px}
+@media(max-width:780px){
+  .photo-frame,.photo-frame.wide,.photo-frame.tall{grid-column:span 12;transform:none}
+  .photo-frame img,.photo-frame.tall img{height:auto;max-height:70vh;object-fit:cover}
+  .proposal-timeline:before{left:20px}
+  .proposal-item,.proposal-item:nth-child(even){width:auto;margin:0 0 30px 46px}
+  .proposal-item:after,.proposal-item:nth-child(even):after{left:-47px;right:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  .petal{display:none}.photo-frame,.envelope:before{transition:none}
+}
+
+
+/* ===== Stage 2 · Premium framed gallery ===== */
+.gallery-tabs{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:24px auto 34px;
+}
+.gallery-tab{
+  border:1px solid rgba(127,89,37,.32);
+  background:rgba(255,251,243,.88);
+  color:var(--wine-dark);
+  border-radius:999px;padding:10px 16px;
+  font:700 12px/1 Arial,sans-serif;letter-spacing:.08em;
+  cursor:pointer;box-shadow:0 8px 22px rgba(60,35,22,.08);
+  transition:.25s ease;
+}
+.gallery-tab:hover,.gallery-tab.active{
+  background:linear-gradient(135deg,var(--wine),var(--wine-dark));
+  color:#fff;border-color:transparent;transform:translateY(-2px);
+}
+.gallery-masonry{
+  columns:3 280px;column-gap:24px;max-width:1100px;margin:auto;
+}
+.memory-card{
+  break-inside:avoid;margin:0 0 24px;background:#fffaf1;
+  border-radius:6px;position:relative;padding:13px 13px 46px;
+  box-shadow:0 26px 60px rgba(49,27,18,.18);
+  border:9px solid transparent;
+  border-image:linear-gradient(145deg,#7d5424,#f3d991,#9b6e2e,#f7e5af,#745020) 1;
+  overflow:hidden;cursor:pointer;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s ease;
+  opacity:0;transform:translateY(34px) scale(.98);
+}
+.memory-card.in-view{opacity:1;transform:translateY(0) scale(1)}
+.memory-card.hidden-by-filter{display:none}
+.memory-card img{
+  width:100%;display:block;object-fit:cover;max-height:620px;
+  filter:saturate(.96) contrast(1.02);
+}
+.memory-card:before{
+  content:"";position:absolute;inset:7px 7px 42px;
+  border:1px solid rgba(255,255,255,.78);pointer-events:none;z-index:2;
+}
+.memory-card:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 42%);
+  pointer-events:none;
+}
+.memory-card .caption{
+  position:absolute;left:14px;right:14px;bottom:11px;text-align:center;
+  font:700 12px/1.25 Arial,sans-serif;color:#4e3828;
+}
+.memory-card .badge{
+  position:absolute;top:20px;left:20px;z-index:4;padding:7px 10px;border-radius:999px;
+  background:rgba(74,20,38,.86);color:white;font:700 10px Arial,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;backdrop-filter:blur(8px)
+}
+.gallery-counter{
+  text-align:center;color:var(--muted);font:600 12px Arial,sans-serif;margin-top:18px
+}
+.viewer{
+  position:fixed;inset:0;z-index:1500;display:none;place-items:center;
+  background:rgba(10,5,8,.96);padding:26px;
+}
+.viewer.show{display:grid}
+.viewer-shell{position:relative;max-width:min(94vw,1150px);max-height:92vh;text-align:center}
+.viewer img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:10px;box-shadow:0 30px 90px #000}
+.viewer-caption{color:#fff7ea;margin:16px auto 0;font:600 14px/1.5 Arial,sans-serif}
+.viewer-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:52px;height:52px;border:0;border-radius:50%;
+  background:rgba(255,255,255,.92);font-size:30px;cursor:pointer;
+}
+.viewer-prev{left:-72px}.viewer-next{right:-72px}
+.viewer-close{
+  position:fixed;top:18px;right:18px;width:48px;height:48px;border:0;border-radius:50%;
+  background:#fff;font-size:26px;cursor:pointer
+}
+.category-divider{
+  max-width:960px;margin:70px auto 26px;text-align:center;position:relative
+}
+.category-divider:before{
+  content:"";position:absolute;left:0;right:0;top:50%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)
+}
+.category-divider span{
+  position:relative;background:var(--cream,#fff8ef);padding:0 20px;
+  color:var(--wine);font:700 13px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase
+}
+@media(max-width:850px){
+  .gallery-masonry{columns:2 230px}
+  .viewer-prev{left:8px}.viewer-next{right:8px}
+}
+@media(max-width:560px){
+  .gallery-masonry{columns:1}
+  .memory-card{margin-bottom:18px}
+  .viewer{padding:10px}
+  .viewer-btn{width:44px;height:44px;font-size:24px}
+}
+
+
+/* ===== Stage 3 · Cinematic envelope & book opening ===== */
+.intro-cinema{
+  position:fixed;inset:0;z-index:2200;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 26%,rgba(255,224,173,.18),transparent 24%),
+    radial-gradient(circle at 15% 80%,rgba(150,49,83,.22),transparent 30%),
+    linear-gradient(145deg,#14070d 0%,#3c1022 48%,#741e40 100%);
+  transition:opacity 1s ease,visibility 1s ease;
+}
+.intro-cinema.done{opacity:0;visibility:hidden}
+.intro-grain{
+  position:absolute;inset:-50%;opacity:.12;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  animation:grainShift .24s steps(2) infinite;
+}
+@keyframes grainShift{0%{transform:translate(0)}25%{transform:translate(2%,-1%)}50%{transform:translate(-1%,2%)}75%{transform:translate(1%,1%)}100%{transform:translate(0)}}
+.intro-skip{
+  position:absolute;top:max(18px,env(safe-area-inset-top));right:18px;z-index:15;
+  border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);
+  color:#fff7ec;border-radius:999px;padding:10px 15px;backdrop-filter:blur(12px);
+  font:700 11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer
+}
+.intro-scene{position:relative;width:min(92vw,720px);height:min(86vh,690px);perspective:1600px}
+.intro-kicker{
+  position:absolute;top:2%;left:0;right:0;text-align:center;color:#ead8b0;
+  font:700 11px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;
+  opacity:0;animation:introFade .9s .2s forwards
+}
+.intro-heading{
+  position:absolute;top:7%;left:0;right:0;text-align:center;color:#fff7ed;
+  font:500 clamp(34px,7vw,68px)/1.05 Georgia,serif;letter-spacing:.02em;
+  opacity:0;transform:translateY(14px);animation:introRise 1s .45s forwards
+}
+.intro-sub{
+  position:absolute;top:19%;left:0;right:0;text-align:center;color:#e4cfae;
+  font:500 13px/1.5 Arial,sans-serif;letter-spacing:.08em;
+  opacity:0;animation:introFade 1s .9s forwards
+}
+@keyframes introFade{to{opacity:1}}
+@keyframes introRise{to{opacity:1;transform:none}}
+.envelope-3d{
+  position:absolute;left:50%;top:57%;width:min(82vw,520px);aspect-ratio:1.56/1;
+  transform:translate(-50%,-50%) rotateX(5deg);transform-style:preserve-3d;
+  filter:drop-shadow(0 36px 48px rgba(0,0,0,.45));cursor:pointer;
+}
+.env-body{
+  position:absolute;inset:0;border-radius:14px;
+  background:linear-gradient(145deg,#f6e8d1,#dcbf93);
+  overflow:hidden;box-shadow:inset 0 0 0 1px rgba(86,50,22,.22)
+}
+.env-left,.env-right,.env-bottom,.env-flap{position:absolute;inset:0}
+.env-left{clip-path:polygon(0 0,52% 55%,0 100%);background:linear-gradient(145deg,#ecd7b8,#cfad7c)}
+.env-right{clip-path:polygon(100% 0,48% 55%,100% 100%);background:linear-gradient(215deg,#f0dec2,#cda976)}
+.env-bottom{clip-path:polygon(0 100%,50% 50%,100% 100%);background:linear-gradient(#dec09a,#c9a36f)}
+.env-flap{
+  clip-path:polygon(0 0,50% 64%,100% 0);background:linear-gradient(160deg,#fff8e9,#d9bb8f);
+  transform-origin:50% 0;transform:rotateX(0);transition:transform 1.15s cubic-bezier(.16,.84,.2,1);
+  z-index:5;backface-visibility:hidden
+}
+.letter-sheet{
+  position:absolute;left:7%;right:7%;bottom:4%;height:84%;z-index:2;border-radius:8px;
+  background:
+    linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),
+    repeating-linear-gradient(0deg,#f7edda 0 28px,#eee0c6 29px 30px);
+  box-shadow:0 8px 20px rgba(71,42,21,.18);
+  transform:translateY(46%);transition:transform 1.35s .45s cubic-bezier(.18,.84,.18,1);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;color:#64203b
+}
+.letter-sheet strong{font:500 clamp(28px,5vw,48px) Georgia,serif}
+.letter-sheet span{margin-top:10px;font:700 11px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase}
+.wax-seal{
+  position:absolute;left:50%;top:48%;z-index:10;width:88px;height:88px;border-radius:50%;
+  transform:translate(-50%,-50%) rotate(-8deg);display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 35% 28%,#d46682 0 9%,transparent 10%),
+    radial-gradient(circle at 40% 32%,#a52e53,#6d1735 72%);
+  color:#f7dfae;font:700 23px Georgia,serif;
+  box-shadow:0 13px 28px rgba(45,3,19,.42),inset 0 0 0 7px rgba(255,229,183,.13),inset 0 0 18px rgba(40,0,12,.45);
+  transition:transform .55s ease,opacity .55s ease,filter .55s ease
+}
+.wax-seal:before,.wax-seal:after{
+  content:"";position:absolute;background:#7a1839;border-radius:60% 40% 55% 45%;
+  width:22px;height:16px;z-index:-1
+}
+.wax-seal:before{left:-7px;bottom:8px;transform:rotate(35deg)}
+.wax-seal:after{right:-8px;top:12px;transform:rotate(-25deg)}
+.open-hint{
+  position:absolute;left:0;right:0;bottom:2%;text-align:center;color:#f4dfc2;
+  font:700 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+  animation:hintPulse 1.8s infinite
+}
+@keyframes hintPulse{50%{opacity:.45;transform:translateY(3px)}}
+.envelope-3d.open .env-flap{transform:rotateX(178deg)}
+.envelope-3d.open .letter-sheet{transform:translateY(-52%)}
+.envelope-3d.open .wax-seal{
+  transform:translate(-50%,-50%) scale(.12) rotate(160deg);opacity:0;filter:blur(5px)
+}
+.envelope-3d.open{animation:envSettle 2.2s .2s forwards}
+@keyframes envSettle{
+  45%{transform:translate(-50%,-50%) rotateX(2deg) scale(1.02)}
+  100%{transform:translate(-50%,2%) rotateX(0) scale(.84);opacity:.16}
+}
+.book-reveal{
+  position:absolute;left:50%;top:53%;width:min(78vw,440px);aspect-ratio:.72;
+  transform:translate(-50%,-38%) rotateY(-22deg) scale(.72);opacity:0;
+  transform-style:preserve-3d;transition:opacity .9s 1.35s ease,transform 1.2s 1.35s cubic-bezier(.18,.85,.18,1);
+  pointer-events:none
+}
+.intro-cinema.book-time .book-reveal{opacity:1;transform:translate(-50%,-50%) rotateY(0) scale(1)}
+.book-cover{
+  position:absolute;inset:0;border-radius:12px 22px 22px 12px;padding:36px 30px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  color:#f8e9c4;
+  background:
+    radial-gradient(circle at 50% 28%,rgba(255,225,157,.12),transparent 28%),
+    linear-gradient(145deg,#661a39,#2e0b1a 70%);
+  border:2px solid #c8a55d;box-shadow:18px 26px 60px rgba(0,0,0,.48),inset 0 0 0 7px rgba(222,190,118,.12);
+}
+.book-cover:before{
+  content:"";position:absolute;inset:15px;border:1px solid rgba(224,191,116,.58);border-radius:5px 14px 14px 5px
+}
+.book-cover .crest{font-size:44px;margin-bottom:20px}
+.book-cover h2{font:500 clamp(28px,5vw,46px)/1.15 Georgia,serif;margin:0;max-width:320px}
+.book-cover p{font:700 11px/1.6 Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#d9bc7b;margin-top:22px}
+.intro-cinema.book-time .open-hint{display:none}
+.intro-enter{
+  position:absolute;left:50%;bottom:3%;transform:translateX(-50%) translateY(12px);
+  z-index:20;border:1px solid #d8b66d;background:linear-gradient(135deg,#f2d38b,#b98b3c);
+  color:#3d1021;border-radius:999px;padding:13px 24px;cursor:pointer;
+  font:800 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;
+  opacity:0;pointer-events:none;transition:opacity .7s 2.2s ease,transform .7s 2.2s ease
+}
+.intro-cinema.book-time .intro-enter{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.replay-intro{
+  position:fixed;left:18px;bottom:18px;z-index:90;width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(139,96,43,.38);background:rgba(255,248,236,.88);color:var(--wine);
+  box-shadow:0 10px 26px rgba(41,19,12,.16);cursor:pointer;font-size:19px;backdrop-filter:blur(8px)
+}
+@media(max-width:600px){
+  .intro-scene{height:82vh}.intro-heading{top:8%}.intro-sub{top:20%}
+  .envelope-3d{top:59%}.book-reveal{top:54%}
+  .book-cover{padding:28px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro-grain{display:none}
+  .intro-kicker,.intro-heading,.intro-sub{animation:none;opacity:1;transform:none}
+  .env-flap,.letter-sheet,.wax-seal,.book-reveal,.intro-enter{transition-duration:.01ms!important;transition-delay:0s!important}
+}
+
+
+/* ===== Stage 4 · Cinematic atmosphere ===== */
+.cinematic-bg{
+  position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(circle at 70% 12%,rgba(255,204,133,.20),transparent 24%),
+    radial-gradient(circle at 18% 72%,rgba(122,27,61,.11),transparent 34%),
+    linear-gradient(180deg,#f8efe6 0%,#fffaf3 42%,#f7ece3 100%);
+  transition:background 1.2s ease;
+}
+.cinematic-bg:before{
+  content:"";position:absolute;inset:-8%;
+  background:
+    linear-gradient(rgba(255,255,255,.52),rgba(255,255,255,.72)),
+    url("assets/IMG_8004.jpeg") center/cover no-repeat;
+  filter:blur(18px) saturate(.75);
+  opacity:.08;transform:scale(1.12);
+  animation:bgDrift 24s ease-in-out infinite alternate;
+}
+.cinematic-bg:after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 15%,rgba(255,236,190,.28),transparent 35%),
+    linear-gradient(180deg,transparent 60%,rgba(86,22,48,.05));
+}
+@keyframes bgDrift{
+  0%{transform:scale(1.12) translate3d(-1%,0,0)}
+  100%{transform:scale(1.18) translate3d(2%,-1.5%,0)}
+}
+.ambient-glow{
+  position:fixed;left:0;top:0;width:320px;height:320px;border-radius:50%;
+  z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,207,110,.18),rgba(255,207,110,0) 68%);
+  transform:translate(-50%,-50%);
+  transition:opacity .3s ease;
+}
+.gold-particles{
+  position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden;
+}
+.gold-particle{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:radial-gradient(circle,#fff4bc 0 28%,#d8a83c 45%,transparent 72%);
+  box-shadow:0 0 10px rgba(218,170,58,.55);
+  opacity:.56;
+  animation:goldFloat linear infinite;
+}
+@keyframes goldFloat{
+  0%{transform:translate3d(0,110vh,0) scale(.55);opacity:0}
+  12%{opacity:.58}
+  55%{transform:translate3d(38px,48vh,0) scale(1)}
+  90%{opacity:.42}
+  100%{transform:translate3d(-24px,-12vh,0) scale(.65);opacity:0}
+}
+.petal.depth-near{
+  width:18px;height:13px;filter:blur(.15px) drop-shadow(0 4px 4px rgba(91,20,45,.18));
+  opacity:.86;z-index:3
+}
+.petal.depth-mid{width:13px;height:10px;opacity:.68;z-index:2}
+.petal.depth-far{
+  width:8px;height:6px;opacity:.38;filter:blur(.5px);z-index:1
+}
+.effect-controls{
+  position:fixed;right:18px;bottom:18px;z-index:95;display:flex;gap:9px;
+}
+.effect-btn{
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(130,91,43,.35);
+  background:rgba(255,249,239,.88);color:var(--wine);
+  box-shadow:0 10px 28px rgba(43,22,14,.16);cursor:pointer;
+  backdrop-filter:blur(10px);font-size:18px;
+}
+.effect-btn.active{background:linear-gradient(135deg,var(--wine),var(--wine-dark));color:#fff}
+.atmosphere-off .petals,
+.atmosphere-off .gold-particles,
+.atmosphere-off .ambient-glow{display:none}
+.atmosphere-off .cinematic-bg:before{animation:none;opacity:.03}
+.low-power .gold-particle:nth-child(n+13),
+.low-power .petal:nth-child(n+17){display:none}
+.section-tone-warm .cinematic-bg{
+  background:linear-gradient(180deg,#fbefdf,#fffaf2 45%,#f5e7dc)
+}
+.section-tone-faith .cinematic-bg{
+  background:linear-gradient(180deg,#f4efe7,#fffdf8 45%,#eee8df)
+}
+.section-tone-promise .cinematic-bg{
+  background:
+    radial-gradient(circle at 72% 20%,rgba(255,191,189,.18),transparent 30%),
+    linear-gradient(180deg,#f9ecef,#fff9f5 48%,#f3e3e8)
+}
+.chapter,.memory-break{
+  position:relative;
+}
+.chapter:before,.memory-break:before{
+  content:"";position:absolute;inset:-24px -18px;z-index:-1;border-radius:32px;
+  background:linear-gradient(145deg,rgba(255,255,255,.44),rgba(255,255,255,.16));
+  box-shadow:0 20px 70px rgba(77,39,27,.045);
+  backdrop-filter:blur(2px);
+}
+@media(max-width:700px){
+  .ambient-glow{display:none}
+  .gold-particle:nth-child(n+17){display:none}
+  .petal:nth-child(n+21){display:none}
+  .effect-controls{right:12px;bottom:12px}
+  .effect-btn{width:42px;height:42px}
+}
+@media(prefers-reduced-motion:reduce){
+  .gold-particle,.cinematic-bg:before{animation:none}
+  .gold-particles{display:none}
+}
+
+
+/* ===== ULTIMATE BUILD · Stages 5–10 ===== */
+:root{
+  --reader-paper:#fffaf0;
+  --reader-ink:#3f2c27;
+  --reader-gold:#c7a55a;
+  --reader-wine:#671b39;
+}
+.ultimate-toolbar{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+  z-index:180;display:flex;gap:8px;align-items:center;padding:8px;
+  border:1px solid rgba(120,82,39,.26);border-radius:999px;
+  background:rgba(255,250,241,.9);backdrop-filter:blur(16px);
+  box-shadow:0 18px 50px rgba(48,22,16,.2);
+}
+.ultimate-toolbar button{
+  width:42px;height:42px;border:0;border-radius:50%;cursor:pointer;
+  color:var(--wine);background:transparent;font-size:18px;
+}
+.ultimate-toolbar button:hover,.ultimate-toolbar button.active{
+  background:linear-gradient(135deg,var(--wine),var(--wine-dark));color:#fff;
+}
+.book-reader{
+  position:fixed;inset:0;z-index:2000;display:none;
+  background:
+    radial-gradient(circle at 50% 15%,rgba(255,221,155,.12),transparent 28%),
+    linear-gradient(145deg,#17090f,#461126 62%,#28101a);
+  color:white;
+}
+.book-reader.show{display:block}
+.reader-topbar{
+  position:absolute;top:0;left:0;right:0;height:64px;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;padding:0 18px;
+  background:rgba(15,6,10,.64);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.1)
+}
+.reader-title{font:600 14px Georgia,serif;color:#f7e7c2}
+.reader-actions{display:flex;gap:7px}
+.reader-actions button,.reader-close{
+  width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.17);
+  background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-size:17px
+}
+.reader-stage{
+  position:absolute;inset:64px 0 76px;display:grid;place-items:center;padding:20px 76px;
+  perspective:1800px;overflow:hidden;
+}
+.reader-book{
+  position:relative;width:min(1180px,88vw);height:min(760px,78vh);
+  display:grid;grid-template-columns:1fr 1fr;
+  filter:drop-shadow(0 38px 70px rgba(0,0,0,.5));
+}
+.reader-book:before{
+  content:"";position:absolute;left:50%;top:1%;bottom:1%;width:18px;z-index:8;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,rgba(73,47,28,.16),rgba(255,255,255,.2),rgba(73,47,28,.18));
+  border-radius:50%;
+}
+.reader-page{
+  position:relative;overflow:auto;padding:46px 42px 54px;
+  background:
+    linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
+    repeating-linear-gradient(0deg,#fffaf0 0 27px,#f9efd9 28px);
+  color:var(--reader-ink);font-family:Georgia,"Noto Serif Georgian",serif;
+  line-height:1.78;scrollbar-width:thin;
+}
+.reader-page.left{border-radius:18px 3px 3px 18px;box-shadow:inset -12px 0 28px rgba(73,42,22,.09)}
+.reader-page.right{border-radius:3px 18px 18px 3px;box-shadow:inset 12px 0 28px rgba(73,42,22,.09)}
+.reader-page h2{font-size:clamp(24px,3vw,42px);color:var(--reader-wine);line-height:1.18;margin:0 0 22px}
+.reader-page h3{color:var(--reader-wine)}
+.reader-page p{margin:0 0 16px;font-size:clamp(15px,1.3vw,19px)}
+.reader-page img{max-width:100%;max-height:55vh;object-fit:contain;border-radius:9px;display:block;margin:14px auto}
+.reader-page .kicker,.reader-page .sub,.reader-page .orn{text-align:center}
+.reader-page-number{
+  position:absolute;bottom:18px;left:0;right:0;text-align:center;
+  font:700 11px Arial,sans-serif;letter-spacing:.15em;color:#8f7252
+}
+.reader-page.bookmarked:after{
+  content:"★";position:absolute;right:18px;top:14px;color:#b88a2e;font-size:22px
+}
+.page-turn-next{animation:turnNext .52s cubic-bezier(.2,.8,.2,1)}
+.page-turn-prev{animation:turnPrev .52s cubic-bezier(.2,.8,.2,1)}
+@keyframes turnNext{0%{transform:rotateY(0);opacity:1}50%{transform:rotateY(-12deg);opacity:.65}100%{transform:none;opacity:1}}
+@keyframes turnPrev{0%{transform:rotateY(0);opacity:1}50%{transform:rotateY(12deg);opacity:.65}100%{transform:none;opacity:1}}
+.reader-nav{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  display:flex;gap:12px;align-items:center;z-index:12
+}
+.reader-nav button{
+  width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.1);color:#fff;font-size:24px;cursor:pointer
+}
+.reader-progress{min-width:170px;text-align:center;font:700 12px Arial,sans-serif;color:#f4dfb8}
+.reader-side{
+  position:absolute;top:64px;bottom:76px;width:min(350px,86vw);z-index:20;
+  background:rgba(22,8,14,.96);backdrop-filter:blur(18px);
+  border-right:1px solid rgba(255,255,255,.12);padding:22px;overflow:auto;
+  transform:translateX(-105%);transition:transform .35s ease;
+}
+.reader-side.show{transform:none}
+.reader-side h3{font:500 25px Georgia,serif;color:#f0d79f}
+.reader-side button{
+  width:100%;text-align:left;border:0;border-bottom:1px solid rgba(255,255,255,.08);
+  background:transparent;color:#fff;padding:12px 8px;cursor:pointer;line-height:1.35
+}
+.reader-side button:hover{background:rgba(255,255,255,.07)}
+.reader-side .mark{color:#e7c777;margin-right:8px}
+.language-panel{
+  position:fixed;top:74px;right:18px;z-index:170;width:min(340px,88vw);
+  display:none;padding:18px;border-radius:18px;color:#fff;
+  background:rgba(44,12,26,.94);backdrop-filter:blur(16px);
+  box-shadow:0 24px 60px rgba(0,0,0,.3)
+}
+.language-panel.show{display:block}
+.language-panel button{
+  border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);
+  color:#fff;padding:9px 13px;border-radius:999px;cursor:pointer
+}
+.language-note{font:500 13px/1.6 Arial,sans-serif;color:#ead9d1;margin-top:12px}
+.music-panel{
+  position:fixed;right:18px;bottom:78px;z-index:170;width:260px;display:none;
+  padding:16px;border-radius:18px;background:rgba(35,10,21,.94);color:#fff;
+  box-shadow:0 20px 55px rgba(0,0,0,.28)
+}
+.music-panel.show{display:block}
+.music-panel input{width:100%}
+.proposal-finale{
+  position:fixed;inset:0;z-index:2400;display:none;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 36%,rgba(255,224,169,.2),transparent 30%),
+    linear-gradient(145deg,#14070d,#621b3b 65%,#8c2f54);
+}
+.proposal-finale.show{display:grid}
+.proposal-card{
+  position:relative;z-index:3;width:min(90vw,720px);padding:58px 34px;text-align:center;
+  border:1px solid rgba(236,205,137,.66);border-radius:28px;color:#fff6e7;
+  background:rgba(41,10,24,.68);backdrop-filter:blur(17px);
+  box-shadow:0 40px 100px rgba(0,0,0,.46),inset 0 0 0 6px rgba(255,255,255,.035)
+}
+.proposal-card .ring{font-size:74px;animation:ringPulse 2s ease-in-out infinite}
+@keyframes ringPulse{50%{transform:scale(1.08) rotate(-4deg);filter:drop-shadow(0 0 25px #f6cf76)}}
+.proposal-card h2{font:500 clamp(38px,8vw,78px)/1.05 Georgia,serif;margin:12px 0}
+.proposal-card p{font:500 clamp(16px,2.4vw,24px)/1.65 Georgia,serif;color:#f4dfc2}
+.proposal-card .answer{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px
+}
+.proposal-card button{
+  border:1px solid #e0bd6c;border-radius:999px;padding:13px 24px;cursor:pointer;
+  font:800 12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase
+}
+.proposal-yes{background:linear-gradient(135deg,#f4d98f,#b88632);color:#38101d}
+.proposal-close{background:transparent;color:#fff}
+.heart-burst{
+  position:absolute;left:50%;top:50%;font-size:18px;color:#ffd9e5;pointer-events:none;
+  animation:heartBurst 2.6s ease-out forwards
+}
+@keyframes heartBurst{
+  from{transform:translate(-50%,-50%) scale(.4);opacity:1}
+  to{transform:translate(var(--x),var(--y)) scale(1.8) rotate(var(--r));opacity:0}
+}
+.install-banner{
+  position:fixed;left:18px;bottom:76px;z-index:165;display:none;max-width:310px;
+  padding:14px;border-radius:16px;background:rgba(255,250,240,.95);color:#431428;
+  box-shadow:0 16px 45px rgba(50,20,15,.22)
+}
+.install-banner.show{display:block}
+.install-banner button{border:0;border-radius:999px;padding:9px 13px;cursor:pointer}
+.install-now{background:var(--wine);color:#fff}
+.install-dismiss{background:transparent;color:#6e5360}
+.qr-panel{
+  position:fixed;inset:0;z-index:2300;display:none;place-items:center;background:rgba(12,5,8,.9)
+}
+.qr-panel.show{display:grid}
+.qr-card{background:#fff;padding:25px;border-radius:22px;text-align:center;color:#4a2132}
+.qr-card img{width:min(62vw,320px);height:auto}
+.qr-card button{border:0;border-radius:999px;padding:10px 18px;background:var(--wine);color:#fff;cursor:pointer}
+.ko-mode [data-ko-title]:before{
+  content:attr(data-ko-title);display:block;font:700 12px Arial,sans-serif;
+  color:#a47138;letter-spacing:.04em;margin-bottom:7px
+}
+@media(max-width:780px){
+  .reader-stage{padding:10px 12px}
+  .reader-book{width:96vw;height:76vh;grid-template-columns:1fr}
+  .reader-page.left{display:none}
+  .reader-page.right{border-radius:16px;padding:34px 24px 48px}
+  .reader-book:before{display:none}
+  .reader-title{max-width:52vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ultimate-toolbar{bottom:10px;gap:2px;padding:5px}
+  .ultimate-toolbar button{width:39px;height:39px}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-turn-next,.page-turn-prev,.proposal-card .ring{animation:none}
+}
+
+</style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#681b39">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+
+</head>
+<body>
+
+<div class="ultimate-toolbar" aria-label="Digital book controls">
+  <button id="openReader" title="Book mode">📖</button>
+  <button id="openLanguage" title="Language">🇬🇪</button>
+  <button id="openMusic" title="Music">🎹</button>
+  <button id="openProposal" title="Proposal">💍</button>
+  <button id="shareBook" title="Share">↗</button>
+  <button id="openQr" title="QR code">▦</button>
+</div>
+
+<div class="language-panel" id="languagePanel">
+  <strong>Language interface</strong>
+  <div style="display:flex;gap:8px;margin-top:12px">
+    <button data-lang="ka">🇬🇪 ქართული</button>
+    <button data-lang="ko">🇰🇷 한국어 안내</button>
+  </div>
+  <div class="language-note" id="languageNote">
+    조지아어 원문 52페이지는 그대로 보존됩니다. 한국어 모드는 제목·버튼·읽기 안내를 한국어로 표시합니다.
+  </div>
+</div>
+
+<div class="music-panel" id="musicPanel">
+  <strong>Ambient Piano</strong>
+  <p style="font-size:12px;color:#e8d7cf">브라우저가 직접 생성하는 잔잔한 피아노풍 배경음입니다.</p>
+  <button id="musicToggle" style="width:100%;padding:10px;border:0;border-radius:999px;cursor:pointer">▶ Play</button>
+  <label style="display:block;margin-top:12px;font-size:12px">Volume
+    <input id="musicVolume" type="range" min="0" max="100" value="28">
+  </label>
+</div>
+
+<div class="book-reader" id="bookReader" aria-hidden="true">
+  <div class="reader-topbar">
+    <button class="reader-close" id="readerClose">×</button>
+    <div class="reader-title">წერილი შენთვის, ჩემო მარიამ</div>
+    <div class="reader-actions">
+      <button id="readerToc" title="Contents">☰</button>
+      <button id="readerBookmark" title="Bookmark">☆</button>
+    </div>
+  </div>
+  <aside class="reader-side" id="readerSide">
+    <h3>Contents</h3>
+    <div id="readerTocList"></div>
+  </aside>
+  <div class="reader-stage">
+    <div class="reader-book" id="readerBook">
+      <article class="reader-page left" id="readerLeft"></article>
+      <article class="reader-page right" id="readerRight"></article>
+    </div>
+  </div>
+  <div class="reader-nav">
+    <button id="readerPrev">‹</button>
+    <div class="reader-progress" id="readerProgress">1 / 52</div>
+    <button id="readerNext">›</button>
+  </div>
+</div>
+
+<div class="proposal-finale" id="proposalFinale">
+  <div class="proposal-card">
+    <div class="ring">💍</div>
+    <h2>Will you marry me?</h2>
+    <p>მარიამ, მინდა ჩემი დღევანდელი და ყველა მომავალი დღე შენთან ერთად გავატარო.<br>
+    마리암, 나의 오늘과 앞으로의 모든 날을 당신과 함께하고 싶습니다.</p>
+    <div class="answer">
+      <button class="proposal-yes" id="proposalYes">Yes, forever</button>
+      <button class="proposal-close" id="proposalClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="qr-panel" id="qrPanel">
+  <div class="qr-card">
+    <h3>Open our digital book</h3>
+    <img src="assets/mariam-book-qr.png" alt="QR code for the digital book">
+    <p>휴대전화 카메라로 스캔</p>
+    <button id="qrClose">Close</button>
+  </div>
+</div>
+
+<div class="install-banner" id="installBanner">
+  <strong>앱처럼 설치하기</strong>
+  <p style="font-size:12px;line-height:1.5;margin:7px 0">홈 화면에 이 디지털 북을 추가할 수 있습니다.</p>
+  <button class="install-now" id="installNow">Install</button>
+  <button class="install-dismiss" id="installDismiss">Later</button>
+</div>
+
+
+<div class="cinematic-bg" id="cinematicBg"></div>
+<div class="ambient-glow" id="ambientGlow"></div>
+<div class="gold-particles" id="goldParticles" aria-hidden="true"></div>
+<div class="effect-controls">
+  <button class="effect-btn active" id="atmosphereToggle" aria-label="Toggle visual effects" title="Visual effects">✨</button>
+  <button class="effect-btn" id="powerToggle" aria-label="Toggle battery saver" title="Battery saver">◐</button>
+</div>
+
+
+<div class="intro-cinema" id="introCinema">
+  <div class="intro-grain"></div>
+  <button class="intro-skip" id="introSkip">Skip</button>
+  <div class="intro-scene">
+    <div class="intro-kicker">A letter that becomes a family</div>
+    <div class="intro-heading">Grace → Mariam</div>
+    <div class="intro-sub">사랑과 축복, 그리고 미래 가족을 위한 디지털 북</div>
+
+    <div class="envelope-3d" id="envelope3d" role="button" tabindex="0" aria-label="Open the sealed letter">
+      <div class="env-body"></div>
+      <div class="letter-sheet">
+        <strong>ჩემო მარიამ</strong>
+        <span>With love, from Korea</span>
+      </div>
+      <div class="env-left"></div>
+      <div class="env-right"></div>
+      <div class="env-bottom"></div>
+      <div class="env-flap"></div>
+      <div class="wax-seal">G♥M</div>
+    </div>
+
+    <div class="book-reveal">
+      <div class="book-cover">
+        <div class="crest">✦</div>
+        <h2>წერილი შენთვის, ჩემო მარიამ</h2>
+        <p>Grace · Bokshik · Bobe<br>For Mariam</p>
+      </div>
+    </div>
+
+    <div class="open-hint">Touch the seal · გახსენი წერილი</div>
+    <button class="intro-enter" id="introEnter">Enter the book</button>
+  </div>
+</div>
+<button class="replay-intro" id="replayIntro" aria-label="Replay opening">✉</button>
+
+
+<div class="petals" id="petals" aria-hidden="true"></div>
+<div class="cinema-vignette"></div>
+
+<div class="progress" id="progress"></div>
+<header class="topbar">
+  <div class="brand">A Letter of Family Love</div>
+  <button class="icon-btn" id="nightBtn" aria-label="Night mode">◐</button>
+  <button class="icon-btn" id="soundBtn" aria-label="Ambient sound">♫</button>
+  <button class="icon-btn" id="shareBtn" aria-label="Share">↗</button>
+</header>
+
+<section class="hero" id="top">
+  <div class="sparkles"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">ოჯახის სიყვარულის წერილი</div>
+    <h1>წერილი შენთვის,<br>ჩემო მარიამ</h1>
+    <div class="subtitle">სიყვარულის, კურთხევისა და ახალი ოჯახის დაპირება</div>
+    <div class="names">გრეისი · ბოკშიკი · ბობე — მარიამისთვის, მთელი სიყვარულით</div>
+    <div class="hero-actions">
+      <a class="btn primary" href="#c3">წერილის წაკითხვა</a>
+      <a class="btn" href="Mariam_Letter_Georgian.pdf" download>PDF-ის ჩამოტვირთვა</a>
+    </div>
+    <div class="scrollhint">გადაახვიე ქვემოთ ↓</div>
+  </div>
+</section>
+
+<div class="navwrap">
+  <nav class="nav">
+    <a href="#c2">წინასიტყვაობა</a>
+    <a href="#c3">გრეისის წერილი</a>
+    <a href="#c5">ესაია 49</a>
+    <a href="#c6">ახალი დასაწყისი</a>
+    <a href="#c9">კურთხევა</a>
+    <a href="#c10">მომავალი</a>
+    <a href="#promise">დაპირება</a>
+  </nav>
+</div>
+
+<section class="chapter" id="c1"><div class="kicker">ნაწილი 01</div><h2 data-ko-title="마리암에게 보내는 편지">წერილი შენთვის, ჩემო მარიამ</h2><div class="sub">სიყვარულის, კურთხევისა და მომავალი ოჯახის წიგნი</div><div class="orn">✦ ✦ ✦</div><p>გრეისისგან, ბოკშისგან და ბობესგან, შენთვის, მარიამ</p></section><section class="chapter" id="c2"><div class="kicker">ნაწილი 02</div><h2 data-ko-title="이 책을 쓴 이유">რატომ დაიწერა ეს წიგნი</h2><div class="sub">ჩვენი გულის კარი, რომელიც შენთვის ღიაა</div><div class="orn">✦ ✦ ✦</div><p>წინასიტყვაობა</p>
+<p>რატომ დაიწერა ეს წიგნი ✦ ✦ ✦</p>
+<p>"ეს არ არის მხოლოდ ქაღალდი და სიტყვები — ეს არის ჩვენი გულის კარი, რომელიც შენთვის ღიაა."</p>
+<p>მარიამ, ეს პატარა წიგნი დაიწერა ერთი მიზეზით: რომ შენ ერთხელ და სამუდამოდ იცოდე, რომ სიყვარულს, რომელსაც ეძებდი მთელი ცხოვრება, სახელი და მისამართი აქვს, და ის სახელი ჩვენი</p>
+<p>ოჯახია.</p>
+<p>აქ, ამ გვერდებზე, ჯერ წაიკითხავ წერილს, რომელიც გრეისმა დაწერა შენთვის — მთელი გულით, ცრემლებით და რწმენით. შემდეგ იპოვი კურთხევის სიტყვებს, რომლებიც საუკუნეების წინ დაიწერა,</p>
+<p>მაგრამ დღეს შენთვისაა. და ბოლოს, გაიგებ, რა მომავალს ვოცნებობთ შენთვის — ჩვენი ოჯახის, ჩვენი</p>
+<p>სახლის და ჩვენი სიყვარულის მომავალს.</p>
+<p>წაიკითხე ეს ნელა. წაიკითხე ეს იმ დღეებში, როცა გული გიმძიმდება. წაიკითხე ეს, როცა გინდა</p>
+<p>გახსოვდეს, რომ მარტო აღარ ხარ.</p>
+<p>სიყვარულით, შენი ოჯახი</p></section><section class="chapter" id="c3"><div class="kicker">ნაწილი 03</div><h2 data-ko-title="아무도 보지 못했던 아픔">ტკივილი, რომელიც არავინ დაინახა</h2><div class="sub">გრეისის წერილი მარიამს - ნაწილი I</div><div class="orn">✦ ✦ ✦</div><p>ტკივილი, რომელიც არავინ დაინახა გრეისის წერილი მარიამს</p>
+<p>ჩემო საყვარელო მარიამ, ჩემო შვილო,</p>
+<p>შენს ცხოვრებაზე რომ ვფიქრობ, გული მტკივა.</p>
+<p>შენ ამ ქვეყანაზე გოგოდ დაიბადე, მაგრამ შენი დაბადება სიხარულად ვერ მიიღეს. შენს მამას ვაჟი</p>
+<p>სურდა. როდესაც გაიგო, რომ გოგონა დაიბადა, ექიმს საყელოში წვდა და ყვიროდა: „ჩემი ვაჟი დამიბრუნეთ!“</p>
+<p>შენი დაბადების დღეს, როდესაც ბავშვს ყველაზე მეტად სჭირდება მამის ხელები და დედის თბილი გულმკერდი, შენს ირგვლივ სიყვარულის ნაცვლად ტკივილი, იმედგაცრუება და უარყოფა იდგა.</p>
+<p>შენი დედაც მარტო დარჩა. მან თავისი ტკივილი გულში ვერ დაიტია და დროთა განმავლობაში ის ტკივილი შენკენ მიმართა. შენ კი, რომელსაც მხოლოდ ჩახუტება და სიტყვა — „მადლობა, რომ ჩემი</p>
+<p>შვილი ხარ“ — გჭირდებოდა, ხშირად გესმოდა ბრაზი, საყვედური და წყევლის მსგავსი სიტყვები.</p>
+<p>მარიამ, შენ არ იყავი მათი უბედურების მიზეზი.</p>
+<p>შენ არ იყავი შეცდომა.</p>
+<p>შენ არ იყავი წყევლა.</p>
+<p>შენ არ იყავი ის შვილი, რომელიც ვიღაცას უნდა რცხვენოდა.</p>
+<p>შენ იყავი სიცოცხლე.</p>
+<p>შენ იყავი ღმერთისგან ამქვეყნად მოვლენილი ძვირფასი სული.</p>
+<p>შენი დაბადება არ ყოფილა მარცხი.</p>
+<p>შენი არსებობა თავად იყო სასწაული.</p>
+<p>ოცი წლის ასაკში, როდესაც სხვა ახალგაზრდები ჯერ კიდევ მშობლების მზრუნველობის ქვეშ სწავლობდნენ და თავიანთ მომავალს ეძებდნენ, შენ სწავლა შეწყვიტე და პოლონეთის ქარხანაში</p>
+<p>წახვედი.</p>
+<p>შენ საკუთარ ახალგაზრდობას, ოცნებებსა და ჯანმრთელობას შეელიე. ხუთი წლის განმავლობაში მძიმე</p>
+<p>შრომით თითქმის ასი მილიონი ვონის ტოლი თანხა გაუგზავნე ოჯახს.</p>
+<p>შენ თვითონ შიმშილობდი. ახალ ტანსაცმელს არ ყიდულობდი. ზაფხულშიც კი ზამთრის ფეხსაცმლით</p>
+<p>დადიოდი, რადგან ახალი ფეხსაცმლისთვის ფული არ გქონდა.</p>
+<p>მაგრამ სინამდვილეში ფული არ გქონდა იმიტომ კი არა, რომ ვერ გამოიმუშავე, არამედ იმიტომ, რომ</p>
+<p>ყველაფერი მათ მიეცი.</p>
+<p>შენი ხელებით ნაშოვნი ფული მათ გაუგზავნე. შენი ახალგაზრდობა მათ მიეცი. შენი ჯანმრთელობა მათ</p>
+<p>მიეცი. შენი დრო, შენი ენერგია, შენი ცრემლები — ყველაფერი მათ მიუძღვენი.</p></section><section class="chapter" id="c4"><div class="kicker">ნაწილი 04</div><h2 data-ko-title="사랑받기 위해 애쓸 필요는 없다">შენ არ ხარ ვალდებული სიყვარული დაიმსახურო</h2><div class="sub">გრეისის წერილი მარიამს - ნაწილი II</div><div class="orn">✦ ✦ ✦</div><p>და მაინც, ბოლოს გითხრეს: „ჩვენ ხომ არ გვითქვამს, რომ გემუშავა.“</p>
+<p>მარიამ, როდესაც ეს სიტყვები წარმოვიდგინე, მივხვდი, რამდენად ღრმად უნდა დაეჭრა მათ შენთვის გული.</p>
+<p>შენ მათ სიყვარულს ფულით არ ყიდულობდი. შენ მხოლოდ გინდოდა, რომ ერთხელ მაინც ეთქვათ:</p>
+<p>„მარიამ, შენ ჩვენი კარგი შვილი ხარ. მადლობა, რომ ჩვენთვის ასე ბევრი გააკეთე. ჩვენ ვამაყობთ</p>
+<p>შენით.“</p>
+<p>მაგრამ ეს სიტყვები ვერ მიიღე.</p>
+<p>შენ მათ კართან შვილივით მიდიოდი, მაგრამ ზოგჯერ უცხოსავით გამოგისტუმრეს. შენს სიყვარულს</p>
+<p>იღებდნენ, მაგრამ შენს გულს არ უფრთხილდებოდნენ. შენს შრომას იღებდნენ, მაგრამ შენს მსხვერპლს</p>
+<p>არ აღიარებდნენ.</p>
+<p>როდესაც შენს ცხოვრებაში ბობე გამოჩნდა და სიყვარულით მოგიახლოვდა, მათ თავდაპირველად</p>
+<p>მიიღეს მისი საჩუქრები, ძვირფასეულობა და ზრუნვა. მაგრამ შემდეგ ისევ დაიწყეს შენი მომავლის</p>
+<p>დამსხვრევა.</p>
+<p>გეუბნებოდნენ, რომ შეიძლება შვილი ვერ გაგეჩინა. გეუბნებოდნენ, რომ კორეაში ვერასოდეს</p>
+<p>ჩახვიდოდი. გეუბნებოდნენ სიტყვებს, რომლებიც დედისა და მამის პირს არ შეჰფერის.</p>
+<p>ზოგჯერ ხელი აგიწიეს. ზოგჯერ სახლიდან გამოგაგდეს. ზოგჯერ გაგრძნობინეს, თითქოს მშობლების</p>
+<p>სიყვარული მუდმივად უნდა დაგემსახურებინა.</p>
+<p>შენ კი მაინც ცდილობდი.</p>
+<p>მარიამ, ახლა შენ უკვე იცი: შვილის მოვალეობა არ არის მთელი სიცოცხლე იბრძოლოს იმის</p>
+<p>დასამტკიცებლად, რომ სიყვარულის ღირსია.</p>
+<p>ნამდვილი სიყვარული ბავშვს ანგარიშს არ წარუდგენს. ნამდვილი სიყვარული მის მსხვერპლს არ</p>
+<p>უარყოფს. ნამდვილი სიყვარული არ წყევლის მის მომავალს. ნამდვილი სიყვარული არ იყენებს მის სინდისს და შიშს მისი დამორჩილებისთვის.</p>
+<p>შენ ბევრი წელი გეგონა, რომ თუ მეტს იმუშავებდი, მეტ ფულს გაუგზავნიდი, უფრო მეტად მოითმენდი და</p>
+<p>საკუთარ თავს კიდევ უფრო მეტად დათმობდი, ბოლოს ისინი აუცილებლად დაგაფასებდნენ.</p>
+<p>მაგრამ ახლა ხვდები, რომ შენ არასწორად კი არ გიყვარდა — შენ უბრალოდ იმ ადამიანებთან ეძებდი</p>
+<p>უსაფრთხოებას, ვისაც თავად არ შეეძლო შენი გულის დაცვა.</p></section><section class="chapter" id="c5"><div class="kicker">ნაწილი 05</div><h2 data-ko-title="결코 잊지 않는 사랑">სიყვარული, რომელიც არასოდეს დაგივიწყებს</h2><div class="sub">ესაია 49:15-16</div><div class="orn">✦ ✦ ✦</div><p>სიყვარული, რომელიც არასოდეს დაივიწყა გრეისის წერილი მარიამს (გაგრძელება)</p>
+<p>„განა დაივიწყებს ქალი თავის ძუძუთა ბავშვს და არ შეიბრალებს თავის მუცლის ნაშობს? თუნდაც</p>
+<p>მათ დაივიწყონ, მე არ დაგივიწყებ. აჰა, ჩემს ხელისგულებზე ამოგკვეთე შენ.“</p>
+<p>ეს სიტყვები ახლა შენთვისაა.</p>
+<p>შეიძლება ადამიანმა დაივიწყოს ის, ვინც მისი სისხლი და ხორცია. შეიძლება მშობელმა საკუთარი</p>
+<p>ტკივილის გამო ვერ დაინახოს შვილის სული. შეიძლება მან, ვისგანაც ჩახუტებას ელოდი, ზურგი</p>
+<p>შეგაქციოს.</p>
+<p>მაგრამ ღმერთი ამბობს: „მე არ დაგივიწყებ.“</p>
+<p>მარიამ, ღმერთმა შენს ყველა ცრემლს შეხედა. მან დაინახა, როგორ შიმშილობდი, რათა სხვებისთვის</p>
+<p>ფული გაგეგზავნა. მან დაინახა, როგორ მალავდი ტკივილს. მან დაინახა, როგორ გეშინოდა მარტო</p>
+<p>დარჩენის. მან დაინახა, როგორ გატყდა შენი გული იმ ადამიანების წინაშე, რომლებსაც ყველაზე მეტად</p>
+<p>ენდობოდი.</p>
+<p>და ღმერთმა არც ერთი შენი ცრემლი არ დაივიწყა.</p>
+<p>ახლა კი მეც მინდა გითხრა: თუნდაც მათ ვერ დაგიცვეს, თუნდაც მათ ვერ შეგინარჩუნეს, თუნდაც მათ</p>
+<p>ვერ გითხრეს ის სიტყვები, რომლებიც მთელი ცხოვრება გჭირდებოდა — მე, გრეისი, შენ არ დაგივიწყებ.</p>
+<p>მე შენ ჩემს გულში ამოგკვეთე. მე შენ უცხო ქალად არ გხედავ. მე შენ მხოლოდ ჩემი შვილის</p>
+<p>შეყვარებულად არ გხედავ.</p>
+<p>მე შენ ჩემს ქალიშვილად გიღებ.</p>
+<p>შენს წარსულს ვიღებ. შენს ცრემლებს ვიღებ. შენს შიშებს ვიღებ. შენს გატეხილ გულს ვიღებ.</p>
+<p>შენ აღარ უნდა იფიქრო: „თუ ისევ მიმატოვებენ?“ „თუ ისევ გამომიყენებენ?“ „თუ ისევ სახლიდან</p>
+<p>გამაგდებენ?“ „თუ ისევ მეტყვიან, რომ არაფერს წარმოვადგენ?“</p></section>
+<section class="chapter" id="c10"><div class="kicker">ნაწილი 10</div><h2 data-ko-title="미래 가족의 모습">მომავალი ოჯახის სურათი</h2><div class="sub">ოცნება, რომელსაც ერთად ავაშენებთ</div><div class="orn">✦ ✦ ✦</div><p>მომავალი ოჯახის სურათი ოცნება, რომელსაც ერთად ავაშენებთ</p>
+<p>"დავხუჭავ თვალებს და წარმოვიდგენ ჩვენს მომავალს ერთად."</p>
+<p>მარიამ, მინდა ერთი წუთით დავხუჭო თვალები და წარმოვიდგინო ჩვენი მომავალი ერთად.</p>
+<p>წარმოვიდგინე დღე, როცა შენ და ბობე ერთმანეთს ხელს ჩაჭიდებთ, თეთრ კაბაში, და მთელი ოჯახი —</p>
+<p>მე, ბოკშიკი და ჩვენი ახლობლები — თვალცრემლიანები დაგიდგებით გვერდით, ბედნიერების ცრემლებით.</p>
+<p>წარმოვიდგინე პირველი ჩუსოკი (한가위, კორეული შემოდგომის დღესასწაული), როცა ერთად სუფრასთან დავსხდებით. შენ ისწავლი ჩვენს კორეულ კერძებს მომზადება, და ჩვენც შენგან ვისწავლით</p>
+<p>ქართულ კერძებს — ხაჭაპურს, ხინკალს — და ორივე ოჯახის გემო ერთ სუფრაზე შეხვდება.</p>
+<p>წარმოვიდგინე დღე, როცა შენი პირველი შვილი დაიბადება. ჩვენ მას ხელზე ავიყვანთ და ვეტყვით: „შენი დაბადება ჩვენი უდიდესი სიხარულია“ — იქნება ის გოგონა თუ ბიჭი, არავითარი განსხვავება არ იქნება ჩვენს სიყვარულში.</p>
+<p>წარმოვიდგინე ზამთრის საღამოები, როცა შენი შვილები ჩემს მუხლებზე დაჯდებიან და მე მათ ვუამბობ</p>
+<p>ისტორიას მარიამის შესახებ — ქალის შესახებ, რომელმაც შორეული ქვეყნიდან გაბედა და სიყვარული აირჩია, და რომელმაც ტკივილი ძალად აქცია.</p>
+<p>წარმოვიდგინე დღეები, როცა შენ და მე ერთად სამზარეულოში ვიქნებით, ვიცინებთ, ერთმანეთს ენებს ვასწავლით, და ბავშვები ჩვენს გარშემო ირბენენ.</p>
+<p>წარმოვიდგინე შენი მომავალი წარმატებები — რასაც არ უნდა აირჩიო გასაკეთებლად, ჩვენ პირველები</p>
+<p>ვიქნებით, ვინც შენით ვიამაყებთ.</p>
+<p>წარმოვიდგინე დღეები, როცა შენს შვილებს ორი ქვეყანა ექნებათ საყვარლად — საქართველო და</p>
+<p>კორეა — და ორივე ენა, ორივე კულტურა, ორივე ისტორია იქნება მათი მემკვიდრეობა, არა სირცხვილი, არამედ სიმდიდრე.</p>
+<p>მარიამ, ეს მხოლოდ ოცნება არ არის. ეს არის კურთხევა, რომელსაც ჩვენ ერთად ავაშენებთ, დღე დღეზე, სიყვარულით.</p></section><section class="chapter" id="c11"><div class="kicker">ნაწილი 11</div><h2 data-ko-title="복식의 말">ბოკშიკის სიტყვა</h2><div class="sub">შენი კორეელი მამისგან</div><div class="orn">✦ ✦ ✦</div><p>ბოკშიკის სიტყვა შენი კორეელი მამისგან</p>
+<p>ჩემო მარიამ,</p>
+<p>მე ბევრი სიტყვის კაცი არ ვარ, მაგრამ მინდა, რომ ეს რამდენიმე სიტყვა ჩემგან იცოდე.</p>
+<p>მამა არ არის ის კაცი, ვინც შვილს სისხლით აძლევს არსებობას. მამა არის ის, ვინც დგას შვილის</p>
+<p>გვერდით, როცა გზა ძნელდება.</p>
+<p>მე ვდგები შენს გვერდით, მარიამ. არა როგორც ვალდებულება, არამედ როგორც არჩევანი. მე გირჩევ შენ, როგორც ჩემს შვილს.</p>
+<p>როცა კორეაში ჩამოხვალ, ჩემი კარი შენთვის ღიაა. ჩემი სუფრა შენთვის მზადაა. და როცა გვერდით</p>
+<p>დამჭირდები, მე იქ ვიქნები.</p>
+<p>სიყვარულით,</p>
+<p>ბოკშიკი, შენი კორეელი მამა</p></section><section class="chapter" id="c12"><div class="kicker">ნაწილი 12</div><h2 data-ko-title="보베의 말">ბობეს სიტყვა</h2><div class="sub">შენი საყვარელი ადამიანისგან</div><div class="orn">✦ ✦ ✦</div><p>ბობეს სიტყვა შენი საყვარელი ადამიანისგან</p>
+<p>ჩემო მარიამ,</p>
+<p>მე შენ არ გირჩევ მხოლოდ ჩემთვის. მე გირჩევ, რადგან მჯერა შენი, მჯერა ჩვენი მომავლის, და მჯერა, რომ ღმერთმა ჩვენი გზები ერთმანეთს დაუახლოვა მიზეზის გამო.</p>
+<p>ვიცი, რომ გზა აქამდე ძნელი იყო. ვიცი, რომ ბევრჯერ გატყდა შენი გული. მაგრამ გპირდები: მე შენს</p>
+<p>გვერდით ვიქნები, არა მხოლოდ კარგ დღეებში, არამედ ძნელ დღეებშიც.</p>
+<p>ჩვენი ოჯახი — მე, დედა, მამა — ერთად ავაშენებთ შენთვის სახლს, სადაც სიყვარული უსაფრთხოა,</p>
+<p>სადაც შენი ხმა ისმის, და სადაც შენ ხარ ის, ვინც ხარ, გამორჩენის გარეშე.</p>
+<p>მიყვარხარ, მარიამ. დღეს, ხვალ და ყოველთვის.</p>
+<p>შენი,</p>
+<p>ბობე</p></section><section class="chapter promise" id="promise"><div class="kicker">დასასრულის ნაცვლად</div><h2>დაპირება, სიყვარული და იმედი</h2><div class="sub">შენთვის, მარიამ - დღეს, ხვალ და ყოველთვის</div><div class="orn">✦ ✦ ✦</div><p>მარიამ, ამ წიგნის ყოველი სიტყვა ერთ დაპირებად შეინახე: შენ აღარ ხარ მარტო. შენი წარსული ვერ განსაზღვრავს შენს ღირსებას, და სხვისი უარყოფა ვერ წაშლის იმ სიყვარულს, რომლითაც ღმერთმა და ჩვენმა ოჯახმა მიგიღეთ.</p>
+<p>როცა გზა რთული გახდება, ჩვენ შენ გვერდით ვიქნებით. როცა შენს ხმას კანკალი შეეპარება, ჩვენ მოგისმენთ. როცა წარსული ისევ დაგარწმუნებს, რომ სიყვარული უნდა დაიმსახურო, ჩვენ შეგახსენებთ: ოჯახში შენს ადგილს ფასი არ აქვს - ის უკვე შენია.</p>
+<p>შენი მომავალი აღარ იქნება ძველი ტკივილის გაგრძელება. ის იქნება ახალი სახლი, მშვიდი სუფრა, უსაფრთხო ჩახუტება, რწმენა, ქორწილი, შვილების სიცილი და ორი ქვეყნის სიყვარულით გამთბარი ოჯახი.</p>
+<p>მოდი, ჩემო შვილო. მოდი მთელი შენი გულით. აქ შენს სახელს სიყვარულით წარმოთქვამენ, შენს ცრემლებს სიფრთხილით შეეხებიან და შენს ოცნებებს ფრთებს მისცემენ.</p>
+<p>მე, გრეისი, გპირდები: არ დაგივიწყებ. არ მიგატოვებ. არ გაგრძნობინებ, რომ ტვირთი ხარ. მე ვიქნები დედა, რომელიც შენს დაბრუნებას ელოდება, შენს ბედნიერებაზე ლოცულობს და შენი ცხოვრების ყოველ ახალ დილას კურთხევით ხვდება.</p>
+<p>მიყვარხარ, ჩემო მარიამ. მიყვარხარ, ჩემო რუთ. მიყვარხარ, ჩემო ძვირფასო ქალიშვილო. მარად შენი კორეელი დედა - გრეისი.</p></section>
+
+
+
+<div class="viewer" id="viewer" aria-hidden="true">
+  <button class="viewer-close" id="viewerClose" aria-label="Close">×</button>
+  <div class="viewer-shell">
+    <button class="viewer-btn viewer-prev" id="viewerPrev" aria-label="Previous">‹</button>
+    <img id="viewerImage" alt="">
+    <button class="viewer-btn viewer-next" id="viewerNext" aria-label="Next">›</button>
+    <div class="viewer-caption" id="viewerCaption"></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button id="lightboxClose" aria-label="Close">×</button>
+  <img id="lightboxImg" alt="">
+</div>
+
+<div class="floating">
+  <button id="topBtn" aria-label="Back to top">↑</button>
+</div>
+<div class="toast" id="toast">ბმული დაკოპირდა</div>
+<div class="footer">შექმნილია სიყვარულით მარიამისთვის · 2026</div>
+
+<script>
+const scrollProgress = document.getElementById('progress');
+const topBtn = document.getElementById('topBtn');
+const toast = document.getElementById('toast');
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  scrollProgress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+});
+topBtn.addEventListener('click', () => scrollTo({top:0,behavior:'smooth'}));
+
+document.querySelectorAll('.chapter').forEach(el => el.classList.add('reveal'));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.08});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.getElementById('nightBtn').addEventListener('click', () => {
+  document.body.classList.toggle('night');
+  localStorage.setItem('mariam-night', document.body.classList.contains('night') ? '1':'0');
+});
+if(localStorage.getItem('mariam-night')==='1') document.body.classList.add('night');
+
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  const data = {title:document.title,text:'წერილი შენთვის, ჩემო მარიამ',url:location.href};
+  try {
+    if(navigator.share) await navigator.share(data);
+    else {
+      await navigator.clipboard.writeText(location.href);
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),1800);
+    }
+  } catch(e) {}
+});
+
+// Soft, opt-in ambient sound generated locally. No external audio file required.
+let audioCtx=null, master=null, playing=false, timer=null;
+const soundBtn=document.getElementById('soundBtn');
+function tone(freq, when, dur, gain){
+  const osc=audioCtx.createOscillator(), g=audioCtx.createGain();
+  osc.type='sine'; osc.frequency.value=freq;
+  g.gain.setValueAtTime(0,when);
+  g.gain.linearRampToValueAtTime(gain,when+.8);
+  g.gain.linearRampToValueAtTime(0,when+dur);
+  osc.connect(g).connect(master); osc.start(when); osc.stop(when+dur+.1);
+}
+function phrase(){
+  const t=audioCtx.currentTime+.05;
+  [[261.63,0],[329.63,1.4],[392,2.8],[329.63,4.2]].forEach(x=>tone(x[0],t+x[1],2.5,.025));
+}
+soundBtn.addEventListener('click', async()=>{
+  if(!audioCtx) {
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    master=audioCtx.createGain(); master.gain.value=.45; master.connect(audioCtx.destination);
+  }
+  if(!playing) {
+    await audioCtx.resume(); phrase(); timer=setInterval(phrase,6500); playing=true; soundBtn.textContent='❚❚';
+  } else {
+    clearInterval(timer); timer=null; await audioCtx.suspend(); playing=false; soundBtn.textContent='♫';
+  }
+});
+
+
+
+// Stage 4 layered cherry petals
+const petalCount = window.matchMedia('(max-width:700px)').matches ? 20 : 34;
+for(let i=0;i<petalCount;i++){
+  const p=document.createElement('i');
+  const depth=i%3===0?'depth-near':(i%3===1?'depth-mid':'depth-far');
+  p.className='petal '+depth;
+  p.style.left=(Math.random()*100)+'vw';
+  p.style.animationDuration=(8+Math.random()*15)+'s';
+  p.style.animationDelay=(-Math.random()*22)+'s';
+  p.style.setProperty('--drift',(Math.random()*110-55)+'px');
+  petals.appendChild(p);
+}
+
+// Photo lightbox
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lightboxImg');
+document.querySelectorAll('.photo-frame img,.proposal-item img').forEach(img=>{
+  img.addEventListener('click',()=>{lbImg.src=img.src;lb.classList.add('show');lb.setAttribute('aria-hidden','false')});
+});
+function closeLb(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+document.getElementById('lightboxClose').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+
+// Stage 2 premium gallery
+const galleryCards = [...document.querySelectorAll('.memory-card')];
+const galleryTabs = [...document.querySelectorAll('.gallery-tab')];
+const visibleCount = document.getElementById('visibleCount');
+
+galleryTabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    galleryTabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter=tab.dataset.filter;
+    let count=0;
+    galleryCards.forEach(card=>{
+      const show=filter==='all'||card.dataset.category===filter;
+      card.classList.toggle('hidden-by-filter',!show);
+      if(show) count++;
+    });
+    visibleCount.textContent=count;
+  });
+});
+
+const cardObserver=new IntersectionObserver(entries=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>entry.target.classList.add('in-view'),Math.min(i*70,280));
+      cardObserver.unobserve(entry.target);
+    }
+  })
+},{threshold:.08});
+galleryCards.forEach(c=>cardObserver.observe(c));
+
+const viewer=document.getElementById('viewer');
+const viewerImage=document.getElementById('viewerImage');
+const viewerCaption=document.getElementById('viewerCaption');
+let viewerList=[],viewerIndex=0;
+
+function currentVisibleCards(){
+  return galleryCards.filter(c=>!c.classList.contains('hidden-by-filter'));
+}
+function showViewer(card){
+  viewerList=currentVisibleCards();
+  viewerIndex=Math.max(0,viewerList.indexOf(card));
+  updateViewer();
+  viewer.classList.add('show');
+  viewer.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function updateViewer(){
+  const card=viewerList[viewerIndex];
+  if(!card)return;
+  const img=card.querySelector('img');
+  viewerImage.src=img.src;
+  viewerImage.alt=img.alt;
+  viewerCaption.textContent=card.querySelector('.caption')?.textContent||img.alt;
+}
+function closeViewer(){
+  viewer.classList.remove('show');
+  viewer.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  viewerImage.src='';
+}
+function stepViewer(dir){
+  if(!viewerList.length)return;
+  viewerIndex=(viewerIndex+dir+viewerList.length)%viewerList.length;
+  updateViewer();
+}
+galleryCards.forEach(card=>card.addEventListener('click',()=>showViewer(card)));
+document.getElementById('viewerClose').addEventListener('click',closeViewer);
+document.getElementById('viewerPrev').addEventListener('click',()=>stepViewer(-1));
+document.getElementById('viewerNext').addEventListener('click',()=>stepViewer(1));
+viewer.addEventListener('click',e=>{if(e.target===viewer)closeViewer()});
+document.addEventListener('keydown',e=>{
+  if(!viewer.classList.contains('show'))return;
+  if(e.key==='Escape')closeViewer();
+  if(e.key==='ArrowLeft')stepViewer(-1);
+  if(e.key==='ArrowRight')stepViewer(1);
+});
+let touchStartX=0;
+viewer.addEventListener('touchstart',e=>touchStartX=e.changedTouches[0].clientX,{passive:true});
+viewer.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchStartX;
+  if(Math.abs(dx)>45)stepViewer(dx>0?-1:1);
+},{passive:true});
+
+
+// Stage 3 cinematic opening
+const introCinema = document.getElementById('introCinema');
+const envelope3d = document.getElementById('envelope3d');
+const introSkip = document.getElementById('introSkip');
+const introEnter = document.getElementById('introEnter');
+const replayIntro = document.getElementById('replayIntro');
+let introOpened = false;
+
+function openCinematicEnvelope(){
+  if(introOpened) return;
+  introOpened = true;
+  envelope3d.classList.add('open');
+  setTimeout(()=>introCinema.classList.add('book-time'),950);
+}
+function finishIntro(){
+  introCinema.classList.add('done');
+  localStorage.setItem('mariam-intro-seen','1');
+  document.body.style.overflow='';
+}
+function resetIntro(){
+  introOpened = false;
+  envelope3d.classList.remove('open');
+  introCinema.classList.remove('done','book-time');
+  document.body.style.overflow='hidden';
+}
+envelope3d.addEventListener('click',openCinematicEnvelope);
+envelope3d.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();openCinematicEnvelope()}
+});
+introSkip.addEventListener('click',finishIntro);
+introEnter.addEventListener('click',finishIntro);
+replayIntro.addEventListener('click',resetIntro);
+
+if(localStorage.getItem('mariam-intro-seen')==='1'){
+  introCinema.classList.add('done');
+}else{
+  document.body.style.overflow='hidden';
+}
+
+
+// Stage 4 gold particles and adaptive atmosphere
+const goldParticles = document.getElementById('goldParticles');
+const goldCount = window.matchMedia('(max-width:700px)').matches ? 16 : 30;
+for(let i=0;i<goldCount;i++){
+  const g=document.createElement('i');
+  g.className='gold-particle';
+  const size=2+Math.random()*5;
+  g.style.width=size+'px';g.style.height=size+'px';
+  g.style.left=(Math.random()*100)+'vw';
+  g.style.animationDuration=(10+Math.random()*18)+'s';
+  g.style.animationDelay=(-Math.random()*20)+'s';
+  goldParticles.appendChild(g);
+}
+
+const glow=document.getElementById('ambientGlow');
+let glowFrame=0;
+function moveGlow(x,y){
+  if(glowFrame)return;
+  glowFrame=requestAnimationFrame(()=>{
+    glow.style.transform=`translate(${x-160}px,${y-160}px)`;
+    glowFrame=0;
+  });
+}
+window.addEventListener('pointermove',e=>moveGlow(e.clientX,e.clientY),{passive:true});
+
+const atmosphereToggle=document.getElementById('atmosphereToggle');
+const powerToggle=document.getElementById('powerToggle');
+function applyAtmosphere(){
+  const off=localStorage.getItem('mariam-atmosphere')==='off';
+  const low=localStorage.getItem('mariam-low-power')==='on';
+  document.body.classList.toggle('atmosphere-off',off);
+  document.body.classList.toggle('low-power',low);
+  atmosphereToggle.classList.toggle('active',!off);
+  powerToggle.classList.toggle('active',low);
+}
+atmosphereToggle.addEventListener('click',()=>{
+  const off=document.body.classList.contains('atmosphere-off');
+  localStorage.setItem('mariam-atmosphere',off?'on':'off');
+  applyAtmosphere();
+});
+powerToggle.addEventListener('click',()=>{
+  const low=document.body.classList.contains('low-power');
+  localStorage.setItem('mariam-low-power',low?'off':'on');
+  applyAtmosphere();
+});
+if((navigator.deviceMemory&&navigator.deviceMemory<=4)||navigator.connection?.saveData){
+  localStorage.setItem('mariam-low-power','on');
+}
+applyAtmosphere();
+
+// Change ambient tone according to the visible story section
+const toneTargets=[
+  {el:document.getElementById('work-memory'),tone:'section-tone-warm'},
+  {el:document.getElementById('premium-gallery'),tone:'section-tone-warm'},
+  {el:document.getElementById('gift-memory'),tone:'section-tone-faith'},
+  {el:document.getElementById('proposal-memory'),tone:'section-tone-promise'}
+].filter(x=>x.el);
+const toneObserver=new IntersectionObserver(entries=>{
+  const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(!visible)return;
+  document.body.classList.remove('section-tone-warm','section-tone-faith','section-tone-promise');
+  const match=toneTargets.find(x=>x.el===visible.target);
+  if(match)document.body.classList.add(match.tone);
+},{threshold:[.2,.45,.7]});
+toneTargets.forEach(x=>toneObserver.observe(x.el));
+
+
+// ===== Ultimate build: 52-page reader, music, language, proposal, PWA =====
+const q = s => document.querySelector(s);
+const qa = s => [...document.querySelectorAll(s)];
+
+// Build exactly 52 virtual pages from the preserved source material.
+const sourceSections = qa('section.chapter');
+const sourceBlocks = [];
+sourceSections.forEach(section=>{
+  const title = section.querySelector('h2')?.textContent.trim() || '';
+  const subtitle = section.querySelector('.sub')?.textContent.trim() || '';
+  const nodes = [...section.children].filter(el =>
+    !el.matches('.kicker,h2,.sub,.orn') &&
+    (el.matches('p,blockquote,figure,img,div') || el.textContent.trim())
+  );
+  sourceBlocks.push({type:'chapter', title, subtitle, id:section.id});
+  nodes.forEach(el=>sourceBlocks.push({type:'content', html:el.outerHTML, chapter:title, id:section.id}));
+});
+
+function makeBookPages(targetCount=52){
+  const pages=[];
+  pages.push({
+    title:'წერილი შენთვის, ჩემო მარიამ',
+    html:'<div style="text-align:center;padding-top:14%"><div style="font-size:48px">✦</div><h2>წერილი შენთვის,<br>ჩემო მარიამ</h2><p>სიყვარულის, კურთხევისა და მომავალი ოჯახის წიგნი</p><p>Grace · Bokshik · Bobe → Mariam</p></div>',
+    chapter:'Cover'
+  });
+  const contentItems=sourceBlocks.filter(x=>x.type==='content');
+  const chapterMarkers=sourceBlocks.filter(x=>x.type==='chapter');
+  const slots=targetCount-1;
+  const perPage=Math.max(1,Math.ceil(contentItems.length/slots));
+  let ci=0;
+  chapterMarkers.forEach((marker,mi)=>{
+    const nextId=chapterMarkers[mi+1]?.id;
+    const chapterContent=contentItems.filter(x=>x.id===marker.id);
+    if(!chapterContent.length)return;
+    const remainingMarkers=chapterMarkers.length-mi;
+    const remainingSlots=Math.max(1,slots-(pages.length-1));
+    const chapterSlots=Math.max(1,Math.round(remainingSlots/remainingMarkers));
+    const chunkSize=Math.max(1,Math.ceil(chapterContent.length/chapterSlots));
+    for(let i=0;i<chapterContent.length;i+=chunkSize){
+      const chunk=chapterContent.slice(i,i+chunkSize);
+      pages.push({
+        title:i===0?marker.title:'',
+        chapter:marker.title,
+        chapterId:marker.id,
+        html:chunk.map(x=>x.html).join('')
+      });
+    }
+  });
+  while(pages.length<targetCount){
+    const longestIndex=pages.slice(1).reduce((best,p,i,arr)=>{
+      const score=(p.html||'').length;
+      return score>(arr[best]?.html||'').length?i:best;
+    },0)+1;
+    const page=pages[longestIndex];
+    const temp=document.createElement('div');temp.innerHTML=page.html;
+    const children=[...temp.children];
+    if(children.length>1){
+      const half=Math.ceil(children.length/2);
+      const a=children.slice(0,half).map(x=>x.outerHTML).join('');
+      const b=children.slice(half).map(x=>x.outerHTML).join('');
+      page.html=a;
+      pages.splice(longestIndex+1,0,{...page,title:'',html:b});
+    }else{
+      pages.push({title:'',chapter:page.chapter,html:'<p style="text-align:center;margin-top:35%">✦</p>'});
+    }
+  }
+  while(pages.length>targetCount){
+    const last=pages.pop();
+    pages[pages.length-1].html += last.html;
+  }
+  return pages.slice(0,targetCount);
+}
+
+const bookPages=makeBookPages(52);
+const reader=q('#bookReader'), left=q('#readerLeft'), right=q('#readerRight');
+const progress=q('#readerProgress'), tocList=q('#readerTocList'), readerBook=q('#readerBook');
+let spread=Number(localStorage.getItem('mariam-reader-spread')||0);
+let bookmarks=JSON.parse(localStorage.getItem('mariam-bookmarks')||'[]');
+
+function pageMarkup(page,num){
+  return `${page.title?`<h2>${page.title}</h2>`:''}${page.html}<div class="reader-page-number">${num}</div>`;
+}
+function renderReader(direction=''){
+  const mobile=matchMedia('(max-width:780px)').matches;
+  const leftIndex=mobile?Math.min(spread,51):Math.min(spread*2,51);
+  const rightIndex=mobile?leftIndex:Math.min(leftIndex+1,51);
+  left.innerHTML=mobile?'':pageMarkup(bookPages[leftIndex],leftIndex+1);
+  right.innerHTML=pageMarkup(bookPages[rightIndex],rightIndex+1);
+  left.classList.toggle('bookmarked',bookmarks.includes(leftIndex));
+  right.classList.toggle('bookmarked',bookmarks.includes(rightIndex));
+  progress.textContent=mobile?`${rightIndex+1} / 52`:`${leftIndex+1}–${rightIndex+1} / 52`;
+  readerBook.classList.remove('page-turn-next','page-turn-prev');
+  void readerBook.offsetWidth;
+  if(direction)readerBook.classList.add(direction==='next'?'page-turn-next':'page-turn-prev');
+  localStorage.setItem('mariam-reader-spread',String(spread));
+}
+function maxSpread(){return matchMedia('(max-width:780px)').matches?51:25}
+function stepReader(dir){
+  spread=Math.max(0,Math.min(maxSpread(),spread+dir));
+  renderReader(dir>0?'next':'prev');
+}
+q('#openReader').onclick=()=>{reader.classList.add('show');reader.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderReader()};
+q('#readerClose').onclick=()=>{reader.classList.remove('show');reader.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+q('#readerPrev').onclick=()=>stepReader(-1);
+q('#readerNext').onclick=()=>stepReader(1);
+q('#readerToc').onclick=()=>q('#readerSide').classList.toggle('show');
+q('#readerBookmark').onclick=()=>{
+  const idx=matchMedia('(max-width:780px)').matches?spread:spread*2+1;
+  bookmarks=bookmarks.includes(idx)?bookmarks.filter(x=>x!==idx):[...bookmarks,idx];
+  localStorage.setItem('mariam-bookmarks',JSON.stringify(bookmarks));renderReader()
+};
+const tocEntries=[];
+bookPages.forEach((p,i)=>{
+  if(p.title&&!tocEntries.some(x=>x.title===p.title))tocEntries.push({title:p.title,index:i});
+});
+tocEntries.forEach(entry=>{
+  const b=document.createElement('button');
+  b.innerHTML=`<span class="mark">${bookmarks.includes(entry.index)?'★':'✦'}</span>${entry.title}`;
+  b.onclick=()=>{spread=matchMedia('(max-width:780px)').matches?entry.index:Math.floor(entry.index/2);renderReader();q('#readerSide').classList.remove('show')};
+  tocList.appendChild(b);
+});
+document.addEventListener('keydown',e=>{
+  if(!reader.classList.contains('show'))return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')stepReader(1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp')stepReader(-1);
+  if(e.key==='Escape')q('#readerClose').click();
+});
+let readerTouch=0;
+reader.addEventListener('touchstart',e=>readerTouch=e.changedTouches[0].clientX,{passive:true});
+reader.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-readerTouch;
+  if(Math.abs(dx)>45)stepReader(dx<0?1:-1);
+},{passive:true});
+addEventListener('resize',()=>{spread=Math.min(spread,maxSpread());if(reader.classList.contains('show'))renderReader()});
+
+// Bilingual interface (source body remains the preserved Georgian original)
+const langPanel=q('#languagePanel');
+q('#openLanguage').onclick=()=>langPanel.classList.toggle('show');
+qa('[data-lang]').forEach(btn=>btn.onclick=()=>{
+  const lang=btn.dataset.lang;
+  document.body.classList.toggle('ko-mode',lang==='ko');
+  localStorage.setItem('mariam-ui-lang',lang);
+  q('#openLanguage').textContent=lang==='ko'?'🇰🇷':'🇬🇪';
+  q('#languageNote').textContent=lang==='ko'
+    ?'한국어 안내 모드입니다. 장 제목과 조작 안내는 한국어로 표시되며, 어머니의 조지아어 원문은 변형 없이 보존됩니다.'
+    :'ქართული ორიგინალი სრულად არის დაცული.';
+});
+if(localStorage.getItem('mariam-ui-lang')==='ko')qa('[data-lang="ko"]')[0].click();
+
+// Web Audio ambient piano-like soundtrack
+let audioCtx=null,master=null,musicTimer=null,musicOn=false;
+const musicPanel=q('#musicPanel'),musicBtn=q('#musicToggle'),volume=q('#musicVolume');
+q('#openMusic').onclick=()=>musicPanel.classList.toggle('show');
+function softNote(freq,when,dur=2.8){
+  const osc=audioCtx.createOscillator(),gain=audioCtx.createGain(),filter=audioCtx.createBiquadFilter();
+  osc.type='triangle';osc.frequency.setValueAtTime(freq,when);
+  filter.type='lowpass';filter.frequency.value=1500;
+  gain.gain.setValueAtTime(0.0001,when);
+  gain.gain.exponentialRampToValueAtTime(0.055,when+.04);
+  gain.gain.exponentialRampToValueAtTime(0.0001,when+dur);
+  osc.connect(filter).connect(gain).connect(master);osc.start(when);osc.stop(when+dur+.1);
+}
+const chords=[[261.63,329.63,392],[220,277.18,329.63],[174.61,220,261.63],[196,246.94,293.66]];
+let chordIndex=0;
+function scheduleChord(){
+  if(!musicOn)return;
+  const now=audioCtx.currentTime+.05;
+  chords[chordIndex%chords.length].forEach((f,i)=>softNote(f,now+i*.16,3.6));
+  chordIndex++;musicTimer=setTimeout(scheduleChord,3600);
+}
+async function toggleMusic(){
+  if(!audioCtx){
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    master=audioCtx.createGain();master.connect(audioCtx.destination);
+    master.gain.value=Number(volume.value)/100*.45;
+  }
+  if(audioCtx.state==='suspended')await audioCtx.resume();
+  musicOn=!musicOn;
+  musicBtn.textContent=musicOn?'Ⅱ Pause':'▶ Play';
+  q('#openMusic').classList.toggle('active',musicOn);
+  if(musicOn)scheduleChord();else clearTimeout(musicTimer);
+  localStorage.setItem('mariam-music-volume',volume.value);
+}
+musicBtn.onclick=toggleMusic;
+volume.value=localStorage.getItem('mariam-music-volume')||28;
+volume.oninput=()=>{if(master)master.gain.value=Number(volume.value)/100*.45;localStorage.setItem('mariam-music-volume',volume.value)};
+
+// Proposal finale
+const finale=q('#proposalFinale');
+q('#openProposal').onclick=()=>{finale.classList.add('show');document.body.style.overflow='hidden'};
+q('#proposalClose').onclick=()=>{finale.classList.remove('show');document.body.style.overflow=''};
+q('#proposalYes').onclick=()=>{
+  for(let i=0;i<70;i++){
+    const h=document.createElement('i');h.className='heart-burst';h.textContent=i%4===0?'✦':'❤';
+    const ang=Math.random()*Math.PI*2,dist=120+Math.random()*420;
+    h.style.setProperty('--x',`${Math.cos(ang)*dist}px`);
+    h.style.setProperty('--y',`${Math.sin(ang)*dist}px`);
+    h.style.setProperty('--r',`${Math.random()*720-360}deg`);
+    h.style.animationDelay=`${Math.random()*.35}s`;finale.appendChild(h);
+    setTimeout(()=>h.remove(),3200);
+  }
+  q('#proposalYes').textContent='Forever begins now ♥';
+};
+
+// Share + QR
+q('#shareBook').onclick=async()=>{
+  const data={title:'A Letter for Mariam',text:'წერილი შენთვის, ჩემო მარიამ',url:location.href};
+  if(navigator.share){try{await navigator.share(data)}catch(e){}}
+  else{await navigator.clipboard.writeText(location.href);alert('Link copied')}
+};
+q('#openQr').onclick=()=>q('#qrPanel').classList.add('show');
+q('#qrClose').onclick=()=>q('#qrPanel').classList.remove('show');
+
+// PWA
+let deferredInstall=null;
+const installBanner=q('#installBanner');
+addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredInstall=e;
+  if(localStorage.getItem('mariam-install-dismissed')!=='1')installBanner.classList.add('show');
+});
+q('#installNow').onclick=async()=>{
+  if(!deferredInstall)return;
+  deferredInstall.prompt();await deferredInstall.userChoice;
+  installBanner.classList.remove('show');deferredInstall=null;
+};
+q('#installDismiss').onclick=()=>{installBanner.classList.remove('show');localStorage.setItem('mariam-install-dismissed','1')};
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+
+</script>
+</body>
+</html>
