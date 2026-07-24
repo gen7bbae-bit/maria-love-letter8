@@ -886,6 +886,7 @@ body{padding-bottom:80px}
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#681b39">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="assets/icon-192.png">
 
@@ -1555,7 +1556,7 @@ function makeBookPages(targetCount=52){
 
 const bookPages=makeBookPages(52);
 const reader=q('#bookReader'), left=q('#readerLeft'), right=q('#readerRight');
-const progress=q('#readerProgress'), tocList=q('#readerTocList'), readerBook=q('#readerBook');
+const readerProgressEl=q('#readerProgress'), tocList=q('#readerTocList'), readerBook=q('#readerBook');
 let spread=Number(localStorage.getItem('mariam-reader-spread')||0);
 let bookmarks=JSON.parse(localStorage.getItem('mariam-bookmarks')||'[]');
 
@@ -1570,7 +1571,7 @@ function renderReader(direction=''){
   right.innerHTML=pageMarkup(bookPages[rightIndex],rightIndex+1);
   left.classList.toggle('bookmarked',bookmarks.includes(leftIndex));
   right.classList.toggle('bookmarked',bookmarks.includes(rightIndex));
-  progress.textContent=mobile?`${rightIndex+1} / 52`:`${leftIndex+1}–${rightIndex+1} / 52`;
+  readerProgressEl.textContent=mobile?`${rightIndex+1} / 52`:`${leftIndex+1}–${rightIndex+1} / 52`;
   readerBook.classList.remove('page-turn-next','page-turn-prev');
   void readerBook.offsetWidth;
   if(direction)readerBook.classList.add(direction==='next'?'page-turn-next':'page-turn-prev');
