@@ -1,0 +1,22 @@
+{
+  "name": "A Letter for Mariam",
+  "short_name": "Mariam Book",
+  "description": "A digital family letter, memory book, and proposal.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2d0b1a",
+  "theme_color": "#681b39",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
